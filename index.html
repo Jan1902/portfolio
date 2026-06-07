@@ -11,7 +11,6 @@
 <style>
   :root {
     --bg: #0b0b11;
-    --bg-soft: #12121a;
     --surface: #16161f;
     --surface-2: #1d1d28;
     --border: #2a2a37;
@@ -72,7 +71,7 @@
     top: 0;
     z-index: 50;
     backdrop-filter: blur(12px);
-    background: rgba(13,13,15,0.72);
+    background: rgba(11,11,17,0.72);
     border-bottom: 1px solid transparent;
     transition: border-color .3s ease, background .3s ease;
   }
@@ -96,7 +95,6 @@
     transition: color .2s ease;
   }
   .nav-links a:hover { color: var(--text); }
-  .nav-toggle { display: none; background: none; border: 0; color: var(--text); cursor: pointer; font-size: 1.4rem; }
 
   /* ---------- Hero ---------- */
   .hero { padding: 80px 0 72px; }
@@ -199,6 +197,7 @@
     font-size: 0.9rem;
   }
   .meta-line span { display: inline-flex; align-items: center; gap: 8px; }
+  .meta-line svg { width: 16px; height: 16px; }
 
   /* ---------- Sections ---------- */
   section { padding: 76px 0; }
@@ -249,9 +248,15 @@
     width: 42px; height: 42px;
     border-radius: var(--radius-sm);
     background: var(--accent-dim);
+    color: var(--accent-soft);
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 16px;
-    font-size: 1.2rem;
+  }
+  .card .ico svg { width: 22px; height: 22px; }
+  /* monochrome Linien-Icons (Karten, Badges, Meta-Zeile) */
+  .card .ico svg, .cert .badge svg, .meta-line svg {
+    fill: none; stroke: currentColor; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
   }
   .card h3 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; }
   .card p { color: var(--text-muted); font-size: 0.94rem; }
@@ -385,9 +390,10 @@
     width: 40px; height: 40px;
     border-radius: 9px;
     background: var(--accent-dim);
+    color: var(--accent-soft);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.15rem;
   }
+  .cert .badge svg { width: 20px; height: 20px; }
   .cert h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 3px; }
   .cert .issuer { font-size: 0.86rem; color: var(--text-muted); }
   .cert .status { font-size: 0.74rem; color: var(--accent-soft); margin-top: 5px; display: inline-block; border: 1px solid rgba(125,108,240,0.35); border-radius: 6px; padding: 1px 8px; }
@@ -501,9 +507,9 @@
             <a href="#erfahrung" class="btn btn-ghost">Werdegang ansehen</a>
           </div>
           <div class="meta-line">
-            <span>📍 Hamburg</span>
-            <span>🏢 adesso SE</span>
-            <span>🗣️ Deutsch · Englisch (fließend)</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.4-8 12-8 12s-8-7.6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Hamburg</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> adesso SE</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg> Deutsch · Englisch (fließend)</span>
           </div>
         </div>
         <div class="hero-portrait">
@@ -527,9 +533,9 @@
           ich in meinem Kundenprojekt die Software-Architektur und führe als Lead Developer das Team.
         </p>
         <p>
-          Meine Stärke ist es, <strong>komplexe Zusammenhänge zu durchdringen</strong> und mehrere Streams parallel
-          im Griff zu behalten — von der Beratung über das Requirements Engineering und die Konzeption bis zu
-          Umsetzung, Testing, Inbetriebnahme und Benutzerschulung.
+          In meinen Projekten begleite ich den <strong>gesamten Lebenszyklus</strong> — von der Beratung über
+          Requirements Engineering und Konzeption bis zu Umsetzung, Testing, Inbetriebnahme und Benutzerschulung.
+          Manches setze ich selbst um, anderes verantworte ich ausschließlich auf Architektur-Ebene.
         </p>
         <p>
           Ich hinterfrage bestehende Setups kritisch und bringe neue Technologien dorthin, wo sie echten Mehrwert
@@ -549,41 +555,41 @@
         <div class="section-tag">Kompetenzen &amp; Arbeitsweise</div>
         <h2>Technologie ist Mittel zum Zweck — nicht Selbstzweck</h2>
         <p>
-          Statt mich auf einen festen Stack zu berufen, beginne ich beim Use Case. Diese Offenheit erlaubt mir,
-          in sehr unterschiedlichen Domänen die jeweils sinnvollste Lösung zu bauen.
+          Diese Haltung erlaubt mir, in sehr unterschiedlichen Domänen die jeweils sinnvollste Lösung zu finden —
+          pragmatisch und konsequent auf das Ergebnis ausgerichtet.
         </p>
       </div>
 
       <div class="cards reveal">
         <div class="card">
-          <div class="ico">🏛️</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
           <h3>Software-Architektur</h3>
           <p>Tragfähige Architekturen entwerfen, bewerten und weiterentwickeln — mit Blick auf das große Ganze und die langfristige Wartbarkeit.</p>
         </div>
         <div class="card">
-          <div class="ico">🔎</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
           <h3>Technologie-Evaluation</h3>
           <p>Den Markt sondieren, Optionen objektiv bewerten und die Passung zum konkreten Use Case einschätzen — danach tief genug einarbeiten.</p>
         </div>
         <div class="card">
-          <div class="ico">🧭</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
           <h3>Technische Führung</h3>
           <p>Als Lead Developer Verantwortung für Team, Qualität und Richtung übernehmen und Entwicklung handhabbar machen.</p>
         </div>
         <div class="card">
-          <div class="ico">📐</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
           <h3>Requirements &amp; Konzeption</h3>
           <p>Fachliche Anforderungen sauber erheben, strukturieren und in umsetzbare technische Konzepte überführen.</p>
         </div>
         <div class="card">
-          <div class="ico">🤝</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3>Beratung &amp; Wissenstransfer</h3>
           <p>Kunden beraten, Teams befähigen und Wissen aktiv weitergeben — zuletzt u. a. als interner Trainer.</p>
         </div>
         <div class="card">
-          <div class="ico">🤖</div>
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg></div>
           <h3>Agentische KI &amp; KI-Entwicklung</h3>
-          <p>Maßgeschneiderte agentische KI-Systeme für den jeweiligen Use Case und voll-agentische Softwareentwicklung — hoch-effizient von der Idee bis zum fertigen Produkt.</p>
+          <p>Maßgeschneiderte agentische KI-Systeme für den jeweiligen Use Case und voll-agentische Softwareentwicklung — hoch-effizient über den gesamten Entwicklungsweg hinweg.</p>
         </div>
       </div>
 
@@ -654,7 +660,7 @@
             <div class="trow">
               <span class="yr">ab 2022</span>
               <b>Developer</b>
-              <span class="desc">Gesamter Lebenszyklus: Beratung, RE, Konzeption, Umsetzung, Testing, Inbetriebnahme, Benutzerschulung.</span>
+              <span class="desc">Gesamter Lebenszyklus: Beratung, Requirements Engineering, Konzeption, Umsetzung, Testing, Inbetriebnahme, Benutzerschulung.</span>
             </div>
           </div>
         </div>
@@ -729,14 +735,14 @@
         <div class="qual-sub">Zertifizierungen</div>
         <div class="cert-grid">
           <div class="cert">
-            <div class="badge">🏛️</div>
+            <div class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div>
               <h3>CPSA — Certified Professional for Software Architecture</h3>
               <div class="issuer">iSAQB · Foundation Level</div>
             </div>
           </div>
           <div class="cert">
-            <div class="badge">🤖</div>
+            <div class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></div>
             <div>
               <h3>Claude Certified Architect</h3>
               <div class="issuer">Anthropic</div>
@@ -761,7 +767,7 @@
       </div>
 
       <div class="note reveal">
-        <b>Wichtiger als Zertifikate:</b> die Praxis. Den größten Wert sehe ich in der breiten, hands-on
+        <b>Wichtiger als Zertifikate:</b> die Praxis. Den größten Wert sehe ich in der breiten, praxisnahen
         Projekterfahrung über sehr unterschiedliche, anspruchsvolle Domänen hinweg — dort, wo Architektur-
         und Führungsentscheidungen jeden Tag real auf die Probe gestellt werden.
       </div>
@@ -823,14 +829,6 @@
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-  // Platzhalter-Links abfangen
-  document.querySelectorAll('[data-placeholder]').forEach((a) => {
-    a.addEventListener('click', (ev) => {
-      ev.preventDefault();
-      alert('Platzhalter — bitte deinen Profil-Link in der index.html eintragen.');
-    });
-  });
 </script>
 </body>
 </html>
